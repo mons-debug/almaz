@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 0.75rem;
+}
+
+html[dir="rtl"] body {
+  font-family: var(--font-tajawal), system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  background: #ffffff;
+  color: #0B0F19;
+}
+
+/* Focus styles for accessibility */
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid #1FB6FF;
+  outline-offset: 2px;
+}
+
+/* Simple rays background utility */
+.bg-rays-gold {
+  background-image: radial-gradient(circle at 70% 30%, rgba(245,197,66,0.35), transparent 40%),
+    radial-gradient(circle at 40% 60%, rgba(0,0,0,0.5), transparent 50%),
+    linear-gradient(135deg, #0B0F19 0%, #1b2030 100%);
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-xl px-5 py-2.5 font-bold transition-all duration-200 shadow-soft active:scale-95 focus-visible:outline-primary focus-visible:outline-2 focus-visible:outline-offset-2;
+}
+
+.btn-primary { 
+  @apply bg-primary text-white hover:scale-[1.02] hover:shadow-lg hover:bg-blue-600 transform transition-all duration-200; 
+}
+
+.btn-secondary { 
+  @apply bg-accent text-dark hover:scale-[1.02] hover:shadow-lg hover:bg-yellow-400 transform transition-all duration-200 border-2 border-accent/30; 
+}
+
+.pill { 
+  @apply inline-flex items-center rounded-full border border-gray-200 bg-white/80 backdrop-blur-sm px-3 py-1 text-sm font-medium shadow-sm hover:shadow-md transition-all duration-200; 
+}
+
+/* Enhanced interactive elements */
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+/* Loading animation for buttons */
+.btn-loading {
+  @apply relative text-transparent;
+}
+
+.btn-loading::after {
+  @apply absolute inset-0 flex items-center justify-center;
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Enhanced hover effects for cards */
+.product-card {
+  @apply transition-all duration-300 ease-out;
+}
+
+.product-card:hover {
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* Smooth loading states */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Enhanced focus states */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-opacity-50;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  scroll-behavior: smooth;
+}
+
+button, a, input, select {
+  @apply transition-all duration-200 ease-out;
+}
+
+/* Enhanced typography */
+.text-gradient {
+  background: linear-gradient(135deg, #1FB6FF, #0EA5E9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Pulse animation for notifications */
+.pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(31, 182, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(31, 182, 255, 0.8);
+  }
+}
+
+

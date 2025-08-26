@@ -37,7 +37,7 @@ export default function Header() {
 
         {/* Logo - centered on mobile */}
         <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 sm:static sm:transform-none">
-          <Image src="/almz/logo.png" alt="ALMAZ" width={40} height={40} priority className="sm:w-12 sm:h-12 w-10 h-10" />
+          <Image src="/almz/logo.png" alt="ALMAZ" width={50} height={50} priority className="sm:w-16 sm:h-16 w-12 h-12" />
         </Link>
 
         {/* Desktop nav */}
